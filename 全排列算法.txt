@@ -1,0 +1,16 @@
+﻿#说明：全排列算法 - python - 递归
+
+def permutation(result, str, list):  
+    """ 
+        取一个数组的全排列 
+        list：为输入列表 
+        str：传空字符串 
+        result： 为结果列表 
+    """  
+    if len(list) == 1:  
+        result.append(str + "," + list[0])  
+    else:  
+        for temp_str in list:  
+            temp_list = list[:]  
+            temp_list.remove(temp_str)  
+            permutation(result, str + "," + temp_str, temp_list)
